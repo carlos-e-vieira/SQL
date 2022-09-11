@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Comandos SQL</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="background-color: #ccc;">
+	
+	<div class="container">
+		
+		<div class="row">
+
+			<div class="col-md-6 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title bg-info text-light p-2">Criar Banco de Dados</h5>
+				    <p class="card-text text-danger">CREATE DATABASE</p>
+
+				    <textarea class="form-control mt-3" rows="4">
+
+CREATE DATABASE nome_do_banco;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-6 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title bg-info text-light p-2">Excluir Banco de Dados</h5>
+				    <p class="card-text text-danger">DROP DATABASE</p>
+
+
+				    <textarea class="form-control mt-3" rows="4">
+
+DROP DATABASE nome_do_banco;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-6 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title bg-info text-light p-2">Excluir Tabela</h5>
+				    <p class="card-text text-danger">DROP TABLE</p>
+
+				    <textarea class="form-control mt-3" rows="4">
+
+DROP TABLE nome_da_tabela;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-6 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title bg-info text-light p-2">Criar Tabela</h5>
+				    <p class="card-text text-danger">CREATE TABLE</p>
+				    
+				    <textarea class="form-control mt-3" rows="4">
+
+CREATE TABLE nome_da_tabela;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-6 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title bg-info text-light p-2">Zerar uma Tabela</h5>
+				    <p class="card-text text-danger">TRUNCATE</p>
+				    
+				    <textarea class="form-control mt-3" rows="4">
+
+TRUNCATE nome_da_tabela;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2 mb-3">Criar Tabela e Colunas</h3>
+				    <h5 class="card-text"><span class="text-danger">NOT NULL</span> = Campos Obrigatórios</h5>
+				    <h5 class="card-text"><span class="text-danger">NULL</span> = Campos Opcionais</h5>
+				    <h5 class="card-text"><span class="text-danger">DEFAULT</span> = Valor pré definido</h5>
+				    <h5 class="card-text"><span class="text-danger">tinyint</span> = é o boolean do SQL</h5>
+
+				    <textarea class="form-control mt-3" rows="13">
+
+CREATE TABLE tb_cursos (
+
+	id_curso int NOT NUll,
+	imagem_curso varchar(100) NOT NULL,
+	nome_curso char(50) NOT NULL,
+	resumo text NULL,
+	data_cadastro datetime NOT NULL,
+	ativo boolean DEFAULT true,
+	investimento float(8,2) DEFAULT 0
+
+);
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-6 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title bg-info text-light p-2">Renomeando Tabela</h5>
+				    <p class="card-text text-danger">RENAME TABLE (tabela_nome_atual) TO (tabela_novo_nome)</p>
+
+				    <textarea class="form-control mt-3" rows="4">
+
+RENAME TABLE tb_cursos_1 TO tb_cursos_2;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-6 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title bg-info text-light p-2">Incluir nova Coluna na Tabela</h5>
+				    <p class="card-text text-danger">ALTER TABLE (tabela) ADD COLUMN (coluna)</p>
+
+				    <textarea class="form-control mt-3" rows="5">
+
+ALTER TABLE nome_da_tabela ADD COLUMN nova_coluna VARCHAR(5) NOT NULL;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-6 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title bg-info text-light p-2">Alterar uma Coluna da Tabela</h5>
+				    <p class="card-text text-danger">ALTER TABLE (tabela) CHANGE (coluna)</p>
+
+				    <textarea class="form-control mt-3" rows="5">
+
+ALTER TABLE nome_da_tabela CHANGE nova_coluna nova_coluna INT(5) NULL;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-6 mt-3">	
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title bg-info text-light p-2">Excluir Coluna da Tabela</h5>
+				    <p class="card-text text-danger">ALTER TABLE (tabela) DROP (coluna)</p>
+
+				    <textarea class="form-control mt-3" rows="5">
+
+ALTER TABLE nome_da_tabela DROP nome_coluna;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">INSERT - Inserir dados na Tabela</h3>
+				    <h5 class="card-text text-danger">INSERT INTO tabela(...) values(...);</h5>
+
+				    <textarea class="form-control mt-3" rows="5">
+
+INSERT INTO nome_tabela(ativo, carga_horaria, data_cadastro, id_curso, imagem_curso, investimento, nome_curso, resumo)values(1, 35, '2021-09-11 16:27:35', 1, 'curso_angular.jpg', 575.76, 'Web Completo', 'Aprenda a desenvolver aplicações incriveis com Angular');
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Consultar dados na Tabela</h3>
+				    <h5 class="card-text text-danger">SELECT (colunas) FROM (tabela)</h5>
+
+				    <h6 class="mt-4">Selecionando Todas as Colunas por nome</h6>
+				    <textarea class="form-control mt-3" rows="4">
+
+SELECT id_curso, resumo, ativo, carga_horaria, data_cadastro, imagem_curso, investimento, nome_curso FROM tb_cursos;
+
+					</textarea>
+
+					<h6 class="mt-4">Selecionando Algumas Colunas</h6>
+				    <textarea class="form-control mt-3" rows="4">
+
+SELECT id_curso, resumo FROM tb_cursos;
+
+					</textarea>
+
+					<h6 class="mt-4">Selecionando Todas as Colunas</h6>
+				    <textarea class="form-control mt-3" rows="4">
+
+SELECT * FROM tb_cursos;
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - WHERE - Filtro de Registros</h3>
+				    <h5 class="card-text text-danger">SELECT nome_coluna FROM nome_tabela WHERE ...;</h5>
+
+					<h6 class="mt-4">Operadores de comparação</h6>
+				    <textarea class="form-control mt-3" rows="10">
+
+SELECT id_curso, nome_curso FROM tb_cursos WHERE investimento < 500;
+
+SELECT * FROM tb_alunos WHERE interesse = 'Jogos';
+
+SELECT * FROM tb_alunos WHERE idade < 25;
+
+SELECT * FROM tb_alunos WHERE idade >= 35;
+
+					</textarea>
+
+					<h6 class="mt-4">Operadores lógicos</h6>
+				    <textarea class="form-control mt-3" rows="11">
+
+SELECT id_curso, nome_curso FROM tb_cursos WHERE investimento < 500 AND carga_horaria > 30;
+
+SELECT * FROM tb_alunos WHERE interesse = 'Jogos' AND idade > 45;
+
+SELECT * FROM tb_alunos WHERE interesse = 'Jogos' AND idade > 45 AND estado = 'RN';
+
+SELECT * FROM tb_alunos WHERE interesse = 'Jogos' OR idade > 45;
+
+
+					</textarea>
+				  </div>
+				</div>
+			</div>
+
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Filtros com o operador BETWEEN</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="4">
+
+SELECT * FROM tb_alunos WHERE idade BETWEEN 18 AND 35;
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Filtros com o operador IN</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="9">
+
+SELECT * FROM tb_alunos WHERE interesse = 'Jogos' OR interesse = 'Esporte' OR interesse = 'Música';
+
+SELECT * FROM tb_alunos WHERE interesse IN('Jogos', 'Esporte', 'Música');
+
+SELECT * FROM tb_alunos WHERE interesse NOT IN('Jogos', 'Esporte', 'Música');
+
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Filtros com o operador LIKE</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="18">
+
+SELECT * FROM tb_alunos WHERE nome = 'Evelyn';
+
+SELECT * FROM tb_alunos WHERE nome LIKE '%e';
+
+SELECT * FROM tb_alunos WHERE nome LIKE '%a%';
+
+SELECT * FROM tb_alunos WHERE nome LIKE 's%e';
+
+SELECT * FROM tb_alunos WHERE nome LIKE '_riel';
+
+SELECT * FROM tb_alunos WHERE nome LIKE '_ru_';
+
+SELECT * FROM tb_alunos WHERE nome LIKE 'I__';
+
+SELECT * FROM tb_alunos WHERE nome LIKE '%tt_';
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Ordenando resultado ORDER BY</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="8">
+
+SELECT * FROM tb_alunos WHERE idade BETWEEN 18 AND 59 ORDER BY nome ASC;
+
+SELECT * FROM tb_alunos WHERE idade BETWEEN 18 AND 59 ORDER BY nome DESC;
+
+SELECT * FROM tb_alunos WHERE idade BETWEEN 18 AND 59 ORDER BY nome ASC, idade DESC, estado ASC;
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Limitando retorno</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="14">
+
+SELECT * FROM tb_alunos LIMIT 25;
+
+SELECT * FROM tb_alunos ORDER BY id_aluno DESC LIMIT 25;
+
+SELECT * FROM tb_alunos LIMIT 4 OFFSET 0;
+
+SELECT * FROM tb_alunos LIMIT 4 OFFSET 4;
+
+SELECT * FROM tb_alunos LIMIT 4 OFFSET 8; //TRAGA 4 RESULTADOS APARTIR DO REGISTRO 8
+
+SELECT * FROM tb_alunos LIMIT 8,4; //APARTIR DO REGISTRO 8, TRAGA 4 RESULTADOS
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Funções de agregação parte 1 - MAX, MIN e AVG</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="14">
+
+SELECT MIN(investimento) FROM tb_cursos;
+
+//MENOR INVESTIMENTO
+SELECT MIN(investimento) FROM tb_cursos WHERE ativo = true;
+
+//MAIOR INVESTIMENTO
+SELECT MAX(investimento) FROM tb_cursos WHERE ativo = true;
+
+//A MÉDIA DO INVESTIMENTO
+SELECT AVG(investimento) FROM tb_cursos WHERE ativo = true;
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Funções de agregação parte 2 - SUM e COUNT</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="12">
+
+//SOMANDO VALORES DOS REGISTROS
+SELECT SUM(investimento) FROM tb_cursos;
+
+SELECT SUM(investimento) FROM tb_cursos WHERE ativo = true;
+
+//CONTANTO REGISTROS
+SELECT COUNT(*) FROM tb_cursos;
+
+SELECT COUNT(*) FROM tb_cursos WHERE ativo = false;
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Agrupando seleção de registros (GROUP BY)</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="17">
+
+//SELECIONANDO INTERESSES UNICOS
+SELECT * FROM tb_alunos WHERE interesse = 'Jogos';
+
+//AGRUPAR TODOS OS REGISTROS DA COLUNA INTERESSE
+SELECT * FROM tb_alunos GROUP BY interesse;
+
+//CONTANDO CADA TIPO DE INTERESSE
+SELECT *, COUNT(*) FROM tb_alunos GROUP BY interesse;
+
+SELECT interesse, COUNT(*) FROM tb_alunos GROUP BY interesse;
+
+SELECT interesse, COUNT(*) AS total_por_interesse FROM tb_alunos GROUP BY interesse;
+
+SELECT estado, COUNT(*) AS total_de_estados FROM tb_alunos GROUP BY estado;
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">SELECT - Filtrando seleções agrupadas - HAVING</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="14">
+
+//TRAZ RESULTADOS AGRUPADOS COM O HAVING
+SELECT estado, COUNT(*) AS total_de_registros FROM tb_alunos GROUP BY estado HAVING total_de_registros >= 5;
+
+//
+SELECT estado, COUNT(*) FROM tb_alunos GROUP BY estado HAVING estado IN('MG', 'SP');
+
+//
+SELECT estado, COUNT(*) AS total_de_registro FROM tb_alunos GROUP BY estado HAVING estado IN('MG', 'SP') AND total_de_registro > 4;
+
+//
+SELECT estado, COUNT(*) AS total_de_registro FROM tb_alunos WHERE interesse != 'Esporte' GROUP BY estado HAVING total_de_registro > 3;
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">UPDATE - Atualizando registros</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="17">
+
+//ATUALIZANDO NOME DO ALUNO
+UPDATE tb_alunos SET nome = 'João' WHERE id_aluno = 13;
+
+//MODIFICANDO UM GRUPO DE REGISTROS
+UPDATE tb_alunos SET interesse = 'Saúde' WHERE idade >= 80;
+
+//ATUALIZANDO VARIAS COLUNAS
+UPDATE tb_alunos SET nome = 'José', idade = 25, email = 'jose@gmail.com' WHERE id_aluno = 1;
+
+//USANDO COM COMPARADORES LÓGICOS
+SELECT * FROM tb_alunos WHERE idade BETWEEN 18 AND 25 AND estado = 'PA';
+
+UPDATE tb_alunos SET nome = 'Maria' WHERE idade BETWEEN 18 AND 25 AND estado = 'PA';
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-12 mt-5">	
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title bg-info text-light p-2">DELETE - Excluindo registros</h3>
+
+					<h6 class="mt-4">Exemplo(s)</h6>
+				    <textarea class="form-control mt-3" rows="8">
+
+//EXCLUINDO 
+DELETE FROM tb_alunos WHERE id_aluno = 13;
+
+//
+DELETE FROM tb_alunos WHERE idade IN(10, 18, 22, 28, 34) AND interesse = 'Esporte';
+
+					</textarea>
+
+				  </div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+</body>
+</html>
